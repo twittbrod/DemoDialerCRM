@@ -1,10 +1,17 @@
 {
-  "name": "untitled1",
+  "name": "demo-dialer-crm",
   "version": "0.0.0",
-  "private": true,
+  "description": "Take a Twilio recording transcription and send it as an SMS to a number passed in.",
+  "main": "server.js.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Tim Wittbrod",
+  "license": "ISC",
+  "engines": {
+    "node": "9.2.0"
+  },
+
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
@@ -12,6 +19,10 @@
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
-  }
+    "serve-favicon": "~2.4.5",
+    "twilio": "^3.13.0"
+  },
+  "scripts": {
+    "start" : "node server.js" }
 }
+

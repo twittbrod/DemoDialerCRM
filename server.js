@@ -2,15 +2,17 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+//const accountSid = process.env.TWILIO_ACCOUNT_SID;
+//const authToken = process.env.TWILIO_AUTH_TOKEN;
+//const client = require('twilio')(accountSid, authToken);
+
 const app = express();
 
 app.use(bodyParser());
 
-const listenPort = 3010;
-
+var listenPort = process.env.PORT || 3010;
 
 app.post('/', (req, res) => {
-    console.log("Request received:");
     console.log("\tcompany_id: " + req.body.company_id);
     console.log("\tcompany_name: " + req.body.company_name);
     console.log("\tcustomer_id: " + req.body.customer_id);
@@ -20,6 +22,7 @@ app.post('/', (req, res) => {
     console.log("\tcampaign: " + req.body.campaign);
     console.log("\tresult_code: " + req.body.result_code);
     console.log("\n\n\n");
+
     res.send("Request received.");
 
 });
